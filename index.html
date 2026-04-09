@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>上上签 · 签筒问运</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@300;400;600;700&display=swap');
+
+:root {
+  --red-deep: #8B1A1A;
+  --red-main: #C0392B;
+  --red-bright: #E74C3C;
+  --gold-deep: #8B6914;
+  --gold-main: #D4A017;
+  --gold-light: #F0C040;
+  --gold-pale: #FFF3CC;
+  --ink: #1A0A00;
+  --paper: #FDF6E3;
+  --paper-dark: #F5E6C8;
+  --smoke: rgba(255,243,204,0.15);
+  --shadow-red: rgba(139,26,26,0.4);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  background: var(--ink);
+  user-select: none;
+}
+
+/* ========== SCREENS ========== */
+.screen {
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+.screen.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ========== BACKGROUND ========== */
+.bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 30%, #3D0A00 0%, #1A0500 50%, #0A0200 100%);
+  overflow: hidden;
+}
+
+.bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(139,26,26,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(212,160,23,0.1) 0%, transparent 40%);
+}
+
+/* Grain texture */
+.bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Floating lanterns */
+.lanterns {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.lantern {
+  position: absolute;
+  animation: floatLantern linear infinite;
+}
+
+.lantern svg { display: block; }
+
+@keyframes floatLantern {
+  0% { transform: translateY(110vh) rotate(-5deg); opacity: 0; }
+  5% { opacity: 0.7; }
+  90% { opacity: 0.5; }
+  100% { transform: translateY(-20vh) rotate(5deg); opacity: 0; }
+}
+
+/* Smoke particles */
+.smoke-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  pointer-events: none;
+  overflow: hidden;
+}
+.smoke-particle {
+  position: absolute;
+  bottom: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,243,204,0.12) 0%, transparent 70%);
+  animation: riseSmoke ease-in infinite;
+}
+
+@keyframes riseSmoke {
+  0% { transform: translateY(0) scale(0.5); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-80vh) scale(3); opacity: 0; }
+}
+
+/* ========== SCREEN 1: HOME ========== */
+#screen-home .inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 24px;
+}
+
+/* Temple illustration top */
+.temple-top {
+  width: 320px;
+  max-width: 90vw;
+  margin-bottom: -20px;
+  position: relative;
+  z-index: 3;
+  filter: drop-shadow(0 20px 40px rgba(139,26,26,0.5));
+}
+
+/* Title card */
+.title-card {
+  background: linear-gradient(160deg, #6B0E0E 0%, #3D0500 60%, #1A0200 100%);
+  border: 2px solid var(--gold-main);
+  border-radius: 4px;
+  padding: 32px 40px;
+  text-align: center;
+  position: relative;
+  width: 300px;
+  max-width: 88vw;
+  box-shadow:
+    0 0 0 4px rgba(212,160,23,0.15),
+    0 0 0 8px rgba(139,26,26,0.2),
+    0 30px 60px rgba(0,0,0,0.7),
+    inset 0 1px 0 rgba(212,160,23,0.3);
+}
+
+.title-card::before,
+.title-card::after {
+  content: '◆';
+  position: absolute;
+  color: var(--gold-main);
+  font-size: 10px;
+}
+.title-card::before { top: 8px; left: 12px; }
+.title-card::after { bottom: 8px; right: 12px; }
+
+.title-corner {
+  position: absolute;
+  width: 20px; height: 20px;
+  border-color: var(--gold-main);
+  border-style: solid;
+}
+.title-corner.tl { top: 4px; left: 4px; border-width: 2px 0 0 2px; }
+.title-corner.tr { top: 4px; right: 4px; border-width: 2px 2px 0 0; }
+.title-corner.bl { bottom: 4px; left: 4px; border-width: 0 0 2px 2px; }
+.title-corner.br { bottom: 4px; right: 4px; border-width: 0 2px 2px 0; }
+
+.title-subtitle {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--gold-main);
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.title-main {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 64px;
+  color: var(--gold-light);
+  line-height: 1;
+  letter-spacing: 8px;
+  text-shadow:
+    0 0 20px rgba(240,192,64,0.5),
+    0 2px 4px rgba(0,0,0,0.8);
+  margin-bottom: 6px;
+}
+
+.title-desc {
+  font-size: 12px;
+  color: rgba(240,192,64,0.6);
+  letter-spacing: 3px;
+}
+
+/* Divider */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0;
+  width: 260px;
+  max-width: 80vw;
+}
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-main), transparent);
+}
+.gold-divider span {
+  color: var(--gold-main);
+  font-size: 10px;
+}
+
+/* Fortune wish input */
+.wish-section {
+  width: 300px;
+  max-width: 88vw;
+  margin-bottom: 24px;
+}
+.wish-label {
+  font-size: 12px;
+  color: var(--gold-main);
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.wish-input {
+  width: 100%;
+  background: rgba(255,243,204,0.06);
+  border: 1px solid rgba(212,160,23,0.4);
+  border-radius: 3px;
+  padding: 12px 16px;
+  color: var(--gold-pale);
+  font-family: 'Noto Serif SC', serif;
+  font-size: 14px;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.wish-input::placeholder { color: rgba(212,160,23,0.3); }
+.wish-input:focus {
+  border-color: var(--gold-main);
+  box-shadow: 0 0 12px rgba(212,160,23,0.2);
+}
+
+/* Shake button */
+.shake-btn {
+  background: linear-gradient(160deg, #A01010 0%, #6B0000 100%);
+  border: 2px solid var(--gold-main);
+  border-radius: 3px;
+  padding: 16px 48px;
+  color: var(--gold-light);
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 22px;
+  letter-spacing: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 4px 20px rgba(139,26,26,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+  transition: transform 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+.shake-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+}
+.shake-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 10px rgba(139,26,26,0.3);
+}
+.shake-btn:active::before { transform: translateX(100%); }
+
+/* Date display */
+.date-display {
+  margin-top: 16px;
+  font-size: 11px;
+  color: rgba(212,160,23,0.4);
+  letter-spacing: 2px;
+}
+
+/* ========== SCREEN 2: SHAKING ========== */
+#screen-shake .inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.shake-instruction {
+  font-size: 13px;
+  color: var(--gold-main);
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease 0.3s forwards;
+}
+
+/* Incense burner */
+.incense-scene {
+  position: relative;
+  width: 280px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.incense-smoke-wrap {
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 120px;
+  pointer-events: none;
+}
+
+.incense-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(to top, var(--gold-main), transparent);
+  transform: translateX(-50%);
+}
+
+/* The tube / cylinder */
+.tube-container {
+  position: relative;
+  width: 120px;
+  height: 200px;
+  cursor: pointer;
+}
+
+.tube-container.shaking {
+  animation: shakeAnim 0.15s ease infinite;
+}
+
+@keyframes shakeAnim {
+  0% { transform: rotate(-8deg) translateX(-3px); }
+  25% { transform: rotate(6deg) translateX(3px); }
+  50% { transform: rotate(-4deg) translateX(-2px); }
+  75% { transform: rotate(8deg) translateX(4px); }
+  100% { transform: rotate(-8deg) translateX(-3px); }
+}
+
+.tube-svg { width: 120px; height: 200px; }
+
+/* Sticks flying out */
+.stick-fly {
+  position: absolute;
+  width: 6px;
+  height: 80px;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #F5E6C8, #D4A017, #8B6914);
+  top: 0;
+  left: 50%;
+  transform-origin: bottom center;
+  opacity: 0;
+}
+
+.stick-fly.out {
+  animation: flyOut 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes flyOut {
+  0% { opacity: 1; transform: translateX(-50%) rotate(0) translateY(0); }
+  60% { opacity: 1; transform: translateX(calc(-50% + var(--tx))) rotate(var(--rot)) translateY(var(--ty)); }
+  100% { opacity: 0; transform: translateX(calc(-50% + var(--tx))) rotate(var(--rot)) translateY(calc(var(--ty) + 40px)); }
+}
+
+.tap-hint {
+  margin-top: 24px;
+  font-size: 13px;
+  color: rgba(212,160,23,0.6);
+  letter-spacing: 2px;
+  animation: pulse 2s ease infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.shake-count {
+  margin-top: 12px;
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 32px;
+  color: var(--gold-light);
+  text-shadow: 0 0 20px rgba(240,192,64,0.4);
+  min-height: 44px;
+}
+
+/* ========== SCREEN 3: STICK REVEALED ========== */
+#screen-reveal .inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 24px;
+}
+
+/* The single stick */
+.single-stick-wrap {
+  position: relative;
+  margin-bottom: 24px;
+  animation: stickAppear 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes stickAppear {
+  0% { transform: translateY(-100px) rotate(-20deg); opacity: 0; }
+  100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+}
+
+.single-stick {
+  width: 50px;
+  height: 260px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stick-body {
+  width: 44px;
+  height: 240px;
+  background: linear-gradient(to right, #C8A855 0%, #F0E0A0 30%, #DDB84A 60%, #A07820 100%);
+  border-radius: 22px 22px 4px 4px;
+  position: relative;
+  box-shadow:
+    -3px 0 8px rgba(0,0,0,0.4),
+    3px 0 8px rgba(255,255,200,0.2),
+    0 8px 20px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.stick-top-cap {
+  width: 44px;
+  height: 20px;
+  background: linear-gradient(to bottom, #A07820, #C8A855);
+  border-radius: 22px 22px 0 0;
+  flex-shrink: 0;
+}
+
+.stick-number-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 6px;
+}
+
+.stick-num {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 28px;
+  color: var(--red-deep);
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.stick-num-label {
+  font-size: 9px;
+  color: var(--red-deep);
+  letter-spacing: 1px;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+.stick-divider-line {
+  width: 1px;
+  height: 60px;
+  background: rgba(139,26,26,0.3);
+  margin: 8px 0;
+}
+
+.stick-char {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 22px;
+  color: #5A0A0A;
+  line-height: 1.4;
+}
+
+.stick-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(240,192,64,0.25) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  animation: glowPulse 2s ease infinite;
+  pointer-events: none;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* Fortune card */
+.fortune-card {
+  background: linear-gradient(165deg, #5A0800 0%, #2E0300 100%);
+  border: 1px solid rgba(212,160,23,0.5);
+  border-radius: 4px;
+  width: 300px;
+  max-width: 88vw;
+  padding: 24px;
+  position: relative;
+  box-shadow:
+    0 0 0 1px rgba(212,160,23,0.1),
+    0 20px 60px rgba(0,0,0,0.7);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 0.5s forwards;
+}
+
+.fortune-type-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold-main), var(--gold-deep));
+  border-radius: 20px;
+  padding: 4px 20px;
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 16px;
+  color: var(--ink);
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+
+.fortune-poetry {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 20px;
+  color: var(--gold-pale);
+  text-align: center;
+  line-height: 1.8;
+  letter-spacing: 2px;
+  margin: 16px 0;
+  text-shadow: 0 0 10px rgba(240,192,64,0.2);
+}
+
+.fortune-interpret {
+  border-top: 1px solid rgba(212,160,23,0.2);
+  padding-top: 14px;
+  margin-top: 4px;
+}
+
+.fortune-category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: rgba(240,192,64,0.7);
+}
+.category-item .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold-main);
+}
+
+.fortune-meaning {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 12px;
+  color: rgba(255,243,204,0.65);
+  line-height: 1.9;
+  letter-spacing: 0.5px;
+}
+
+/* Action buttons */
+.action-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 0.9s forwards;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 13px;
+  border-radius: 3px;
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s;
+  outline: none;
+  border: 1px solid rgba(212,160,23,0.4);
+}
+.action-btn:active { transform: scale(0.97); opacity: 0.8; }
+
+.btn-again {
+  background: transparent;
+  color: var(--gold-main);
+}
+.btn-share {
+  background: linear-gradient(135deg, #8B1A1A, #5A0800);
+  color: var(--gold-light);
+  border-color: var(--gold-main);
+}
+
+/* ========== SCREEN 4: SHARE ========== */
+#screen-share .inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.share-card {
+  width: 300px;
+  max-width: 88vw;
+  background: linear-gradient(160deg, #4A0800 0%, #1A0200 100%);
+  border: 1px solid rgba(212,160,23,0.6);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 0.2s forwards;
+}
+
+.share-header {
+  background: linear-gradient(to right, #8B1A1A, #5A0800, #8B1A1A);
+  padding: 16px 24px;
+  text-align: center;
+  border-bottom: 1px solid rgba(212,160,23,0.3);
+  position: relative;
+}
+.share-header::after {
+  content: '✦ 上上签 ✦';
+  display: block;
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 20px;
+  color: var(--gold-light);
+  letter-spacing: 4px;
+}
+
+.share-body {
+  padding: 24px;
+}
+
+.share-stick-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.share-poetry {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 22px;
+  color: var(--gold-pale);
+  text-align: center;
+  line-height: 1.9;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.share-footer {
+  border-top: 1px solid rgba(212,160,23,0.2);
+  padding-top: 12px;
+  text-align: center;
+  font-size: 10px;
+  color: rgba(212,160,23,0.4);
+  letter-spacing: 2px;
+}
+
+.share-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  width: 300px;
+  max-width: 88vw;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease 0.6s forwards;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Incense smoke SVG animation */
+.smoke-path {
+  animation: smokeDrift 3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+.smoke-path:nth-child(2) { animation-delay: 1s; }
+.smoke-path:nth-child(3) { animation-delay: 2s; }
+
+@keyframes smokeDrift {
+  0% { transform: translateY(0) scaleX(1); opacity: 0; }
+  20% { opacity: 0.8; }
+  50% { transform: translateY(-40px) scaleX(1.3); opacity: 0.5; }
+  100% { transform: translateY(-80px) scaleX(0.8); opacity: 0; }
+}
+
+/* Stars */
+.stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.star {
+  position: absolute;
+  width: 2px; height: 2px;
+  border-radius: 50%;
+  background: rgba(240,192,64,0.6);
+  animation: twinkle ease infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+
+/* Page transition overlay */
+.page-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--ink);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  transition: opacity 0.4s ease;
+}
+.page-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Back button */
+.back-btn {
+  position: absolute;
+  top: 24px;
+  left: 20px;
+  color: var(--gold-main);
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.back-btn:hover { opacity: 1; }
+
+/* Screen specific layout adjustments */
+#screen-home { justify-content: center; }
+#screen-shake { justify-content: center; }
+#screen-reveal {
+  justify-content: flex-start;
+  padding-top: 40px;
+  overflow-y: auto;
+}
+#screen-share {
+  justify-content: flex-start;
+  padding-top: 40px;
+  overflow-y: auto;
+}
+
+/* Responsive for small screens */
+@media (max-height: 680px) {
+  .title-main { font-size: 52px; }
+  .title-card { padding: 24px 32px; }
+  .temple-top { width: 240px; }
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: rgba(212,160,23,0.9);
+  color: #1A0A00;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 200;
+  transition: opacity 0.3s, transform 0.3s;
+  white-space: nowrap;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Particles for transition */
+.particle {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold-main);
+  pointer-events: none;
+  z-index: 90;
+  animation: particleFade 1s ease forwards;
+}
+@keyframes particleFade {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0) translate(var(--px), var(--py)); }
+}
+</style>
+</head>
+<body>
+
+<!-- Page transition overlay -->
+<div class="page-overlay" id="pageOverlay"></div>
+<div class="toast" id="toast"></div>
+
+<!-- ============================
+     SCREEN 1: HOME
+============================= -->
+<div class="screen active" id="screen-home">
+  <div class="bg">
+    <div class="stars" id="starsHome"></div>
+    <div class="lanterns" id="lanternsHome"></div>
+    <div class="smoke-container" id="smokeHome"></div>
+  </div>
+  <div class="inner">
+    <!-- Temple Illustration -->
+    <div class="temple-top">
+      <svg viewBox="0 0 320 140" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sky glow -->
+        <defs>
+          <radialGradient id="skyGlow" cx="50%" cy="100%" r="70%">
+            <stop offset="0%" stop-color="#8B1A1A" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <linearGradient id="roofGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#C0392B"/>
+            <stop offset="100%" stop-color="#7B1A0A"/>
+          </linearGradient>
+          <linearGradient id="pillarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#8B6914"/>
+            <stop offset="50%" stop-color="#D4A017"/>
+            <stop offset="100%" stop-color="#8B6914"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="160" cy="130" rx="160" ry="50" fill="url(#skyGlow)"/>
+
+        <!-- Back buildings (distant) -->
+        <rect x="40" y="90" width="30" height="50" fill="#3D0500" opacity="0.5"/>
+        <polygon points="40,90 55,75 70,90" fill="#5A0800" opacity="0.5"/>
+        <rect x="250" y="85" width="30" height="55" fill="#3D0500" opacity="0.5"/>
+        <polygon points="250,85 265,70 280,85" fill="#5A0800" opacity="0.5"/>
+
+        <!-- Main temple body -->
+        <rect x="80" y="95" width="160" height="50" fill="#2E0300" rx="2"/>
+
+        <!-- Columns -->
+        <rect x="95" y="95" width="10" height="50" fill="url(#pillarGrad)"/>
+        <rect x="125" y="95" width="10" height="50" fill="url(#pillarGrad)"/>
+        <rect x="185" y="95" width="10" height="50" fill="url(#pillarGrad)"/>
+        <rect x="215" y="95" width="10" height="50" fill="url(#pillarGrad)"/>
+
+        <!-- Roof layers -->
+        <!-- Top small roof -->
+        <polygon points="140,20 160,5 180,20" fill="#D4A017"/>
+        <rect x="143" y="16" width="34" height="8" fill="#8B1A1A" rx="1"/>
+        <!-- Main roof upper -->
+        <polygon points="55,72 160,30 265,72 260,75 160,36 60,75" fill="url(#roofGrad)"/>
+        <!-- Roof ends (curved tips) -->
+        <path d="M55,72 Q48,68 45,74 Q50,78 60,75" fill="#D4A017"/>
+        <path d="M265,72 Q272,68 275,74 Q270,78 260,75" fill="#D4A017"/>
+        <!-- Roof ridge decorations -->
+        <circle cx="160" cy="30" r="4" fill="#D4A017" filter="url(#glow)"/>
+        <rect x="155" y="28" width="10" height="3" fill="#D4A017" rx="1"/>
+
+        <!-- Lower roof -->
+        <polygon points="70,95 160,62 250,95 246,98 160,66 74,98" fill="url(#roofGrad)"/>
+        <path d="M70,95 Q63,91 60,97 Q65,101 74,98" fill="#D4A017"/>
+        <path d="M250,95 Q257,91 260,97 Q255,101 246,98" fill="#D4A017"/>
+
+        <!-- Decorative lanterns hanging from roof -->
+        <g filter="url(#glow)">
+          <ellipse cx="110" cy="80" rx="5" ry="7" fill="#C0392B" opacity="0.9"/>
+          <rect x="109" y="72" width="2" height="5" fill="#D4A017"/>
+          <line x1="111" y1="87" x2="111" y2="91" stroke="#D4A017" stroke-width="0.8"/>
+          <ellipse cx="210" cy="80" rx="5" ry="7" fill="#C0392B" opacity="0.9"/>
+          <rect x="209" y="72" width="2" height="5" fill="#D4A017"/>
+          <line x1="211" y1="87" x2="211" y2="91" stroke="#D4A017" stroke-width="0.8"/>
+        </g>
+
+        <!-- Moon -->
+        <circle cx="40" cy="25" r="16" fill="#FFF3CC" opacity="0.25" filter="url(#glow)"/>
+        <circle cx="46" cy="21" r="14" fill="#1A0500" opacity="0.8"/>
+
+        <!-- Stars -->
+        <circle cx="75" cy="15" r="1" fill="#FFF3CC" opacity="0.7"/>
+        <circle cx="260" cy="10" r="1.2" fill="#FFF3CC" opacity="0.6"/>
+        <circle cx="290" cy="30" r="0.8" fill="#FFF3CC" opacity="0.5"/>
+        <circle cx="20" cy="45" r="1" fill="#FFF3CC" opacity="0.5"/>
+      </svg>
+    </div>
+
+    <!-- Title Card -->
+    <div class="title-card">
+      <div class="title-corner tl"></div>
+      <div class="title-corner tr"></div>
+      <div class="title-corner bl"></div>
+      <div class="title-corner br"></div>
+      <div class="title-subtitle">签 筒 问 运</div>
+      <div class="title-main">上上签</div>
+      <div class="title-desc">虔诚一问 · 得签解惑</div>
+    </div>
+
+    <div class="gold-divider"><span>✦</span></div>
+
+    <!-- Wish input -->
+    <div class="wish-section">
+      <div class="wish-label">心 中 所 问</div>
+      <input class="wish-input" id="wishInput" type="text" placeholder="请在心中默想您的所求…" maxlength="20">
+    </div>
+
+    <!-- Shake button -->
+    <button class="shake-btn" id="startBtn" onclick="goToShake()">
+      诚 心 求 签
+    </button>
+
+    <div class="date-display" id="dateDisplay"></div>
+  </div>
+</div>
+
+<!-- ============================
+     SCREEN 2: SHAKING
+============================= -->
+<div class="screen" id="screen-shake">
+  <div class="bg">
+    <div class="stars" id="starsShake"></div>
+  </div>
+  <button class="back-btn" onclick="goBack('screen-home')">◂ 返回</button>
+  <div class="inner">
+    <div class="shake-instruction">· 专 心 摇 签 ·</div>
+
+    <div class="incense-scene">
+      <!-- Incense smoke (SVG animated) -->
+      <div class="incense-smoke-wrap">
+        <svg viewBox="0 0 40 120" width="40" height="120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="smokeBlur"><feGaussianBlur stdDeviation="2"/></filter>
+          </defs>
+          <path class="smoke-path" d="M20,120 Q15,100 20,80 Q25,60 20,40 Q15,20 20,0" stroke="rgba(255,243,204,0.4)" stroke-width="3" fill="none" filter="url(#smokeBlur)"/>
+          <path class="smoke-path" d="M18,120 Q25,95 18,70 Q12,50 22,30 Q28,15 20,5" stroke="rgba(255,243,204,0.25)" stroke-width="4" fill="none" filter="url(#smokeBlur)" style="animation-delay:1.2s"/>
+          <path class="smoke-path" d="M22,120 Q14,90 22,65 Q30,45 18,25 Q14,12 22,2" stroke="rgba(255,243,204,0.2)" stroke-width="2" fill="none" filter="url(#smokeBlur)" style="animation-delay:0.6s"/>
+        </svg>
+      </div>
+
+      <!-- Tube / Cylinder -->
+      <div class="tube-container" id="tubeContainer" onclick="doShake()">
+        <svg class="tube-svg" viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="tubeBody" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#5A0A00"/>
+              <stop offset="20%" stop-color="#8B1A1A"/>
+              <stop offset="50%" stop-color="#C0392B"/>
+              <stop offset="80%" stop-color="#8B1A1A"/>
+              <stop offset="100%" stop-color="#5A0A00"/>
+            </linearGradient>
+            <linearGradient id="tubeTop" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#7B5A14"/>
+              <stop offset="50%" stop-color="#D4A017"/>
+              <stop offset="100%" stop-color="#7B5A14"/>
+            </linearGradient>
+            <radialGradient id="topEllipse" cx="50%" cy="30%">
+              <stop offset="0%" stop-color="#F0E0A0"/>
+              <stop offset="100%" stop-color="#A07820"/>
+            </radialGradient>
+            <filter id="tubeShadow">
+              <feDropShadow dx="-4" dy="8" stdDeviation="6" flood-color="rgba(0,0,0,0.6)"/>
+            </filter>
+          </defs>
+
+          <g filter="url(#tubeShadow)">
+            <!-- Main cylinder body -->
+            <rect x="18" y="28" width="84" height="158" rx="42" fill="url(#tubeBody)"/>
+
+            <!-- Highlight stripe -->
+            <rect x="38" y="28" width="12" height="158" rx="6" fill="rgba(255,255,255,0.06)"/>
+
+            <!-- Top ellipse (opening) -->
+            <ellipse cx="60" cy="28" rx="42" ry="14" fill="url(#topEllipse)"/>
+            <ellipse cx="60" cy="26" rx="38" ry="10" fill="rgba(0,0,0,0.5)"/>
+
+            <!-- Bottom ellipse -->
+            <ellipse cx="60" cy="186" rx="42" ry="14" fill="#4A0800"/>
+
+            <!-- Gold band decoration top -->
+            <rect x="18" y="40" width="84" height="8" rx="2" fill="url(#tubeTop)" opacity="0.8"/>
+            <rect x="18" y="166" width="84" height="8" rx="2" fill="url(#tubeTop)" opacity="0.8"/>
+
+            <!-- Chinese characters on tube -->
+            <text x="60" y="90" text-anchor="middle" font-family="Ma Shan Zheng" font-size="20" fill="rgba(212,160,23,0.7)">求</text>
+            <text x="60" y="118" text-anchor="middle" font-family="Ma Shan Zheng" font-size="20" fill="rgba(212,160,23,0.7)">签</text>
+
+            <!-- Pattern lines -->
+            <line x1="22" y1="52" x2="98" y2="52" stroke="rgba(212,160,23,0.2)" stroke-width="0.5"/>
+            <line x1="22" y1="158" x2="98" y2="158" stroke="rgba(212,160,23,0.2)" stroke-width="0.5"/>
+
+            <!-- Sticks visible inside (top) -->
+            <rect x="50" y="8" width="4" height="22" rx="2" fill="#F0E0A0" opacity="0.7"/>
+            <rect x="57" y="4" width="4" height="24" rx="2" fill="#DDB84A" opacity="0.8"/>
+            <rect x="64" y="6" width="4" height="22" rx="2" fill="#F0E0A0" opacity="0.6"/>
+            <rect x="44" y="10" width="3" height="20" rx="1.5" fill="#C8A855" opacity="0.5"/>
+            <rect x="71" y="9" width="3" height="21" rx="1.5" fill="#DDB84A" opacity="0.5"/>
+          </g>
+        </svg>
+
+        <!-- Flying sticks container -->
+        <div id="flyingSticks"></div>
+      </div>
+
+      <!-- Incense burner base -->
+      <svg width="160" height="60" viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg" style="margin-top:-10px">
+        <defs>
+          <linearGradient id="burnerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#3D2800"/>
+            <stop offset="50%" stop-color="#8B6914"/>
+            <stop offset="100%" stop-color="#3D2800"/>
+          </linearGradient>
+        </defs>
+        <!-- Burner legs -->
+        <rect x="52" y="32" width="8" height="24" rx="3" fill="#5A3C00"/>
+        <rect x="100" y="32" width="8" height="24" rx="3" fill="#5A3C00"/>
+        <!-- Burner body -->
+        <ellipse cx="80" cy="30" rx="55" ry="18" fill="url(#burnerGrad)"/>
+        <ellipse cx="80" cy="26" rx="48" ry="12" fill="#4A2E00"/>
+        <!-- Decorative ring -->
+        <ellipse cx="80" cy="30" rx="55" ry="18" fill="none" stroke="#D4A017" stroke-width="1" opacity="0.5"/>
+        <ellipse cx="80" cy="26" rx="48" ry="12" fill="none" stroke="#D4A017" stroke-width="0.5" opacity="0.3"/>
+        <!-- Incense sticks in burner -->
+        <rect x="74" y="0" width="2" height="28" rx="1" fill="#5A3C00" transform="rotate(-5 75 28)"/>
+        <rect x="79" y="0" width="2" height="28" rx="1" fill="#5A3C00"/>
+        <rect x="84" y="0" width="2" height="28" rx="1" fill="#5A3C00" transform="rotate(5 85 28)"/>
+        <!-- Glow tips -->
+        <circle cx="74" cy="3" r="2" fill="#FF6600" opacity="0.8"/>
+        <circle cx="80" cy="1" r="2" fill="#FF6600" opacity="0.8"/>
+        <circle cx="86" cy="3" r="2" fill="#FF6600" opacity="0.8"/>
+        <circle cx="74" cy="3" r="4" fill="#FF6600" opacity="0.2"/>
+        <circle cx="80" cy="1" r="4" fill="#FF6600" opacity="0.2"/>
+        <circle cx="86" cy="3" r="4" fill="#FF6600" opacity="0.2"/>
+      </svg>
+    </div>
+
+    <div class="tap-hint" id="tapHint">轻 点 摇 签</div>
+    <div class="shake-count" id="shakeCount"></div>
+  </div>
+</div>
+
+<!-- ============================
+     SCREEN 3: REVEAL
+============================= -->
+<div class="screen" id="screen-reveal">
+  <div class="bg">
+    <div class="stars" id="starsReveal"></div>
+  </div>
+  <button class="back-btn" onclick="goBack('screen-shake')">◂ 返回</button>
+  <div class="inner">
+    <!-- Single stick -->
+    <div class="single-stick-wrap" id="singleStick">
+      <div class="stick-glow"></div>
+      <div class="single-stick">
+        <div class="stick-body">
+          <div class="stick-top-cap"></div>
+          <div class="stick-number-area">
+            <div class="stick-num" id="stickNum">一</div>
+            <div class="stick-num-label">第一签</div>
+            <div class="stick-divider-line"></div>
+            <div class="stick-char" id="stickChar">吉</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fortune card -->
+    <div class="fortune-card" id="fortuneCard">
+      <div class="fortune-type-badge" id="fortuneBadge">上上签</div>
+      <div class="fortune-poetry" id="fortunePoetry">春风和煦百花开<br>万紫千红映日来<br>事事顺遂心愿达<br>前程似锦喜事来</div>
+      <div class="fortune-interpret">
+        <div class="fortune-category" id="fortuneCategory">
+          <div class="category-item"><div class="dot"></div>姻缘：大吉</div>
+          <div class="category-item"><div class="dot"></div>事业：顺遂</div>
+          <div class="category-item"><div class="dot"></div>财运：亨通</div>
+          <div class="category-item"><div class="dot"></div>健康：安泰</div>
+        </div>
+        <div class="fortune-meaning" id="fortuneMeaning">
+          此签大吉，所求之事必有所成。春风化雨，万物更生，正是出行、求职、嫁娶的大好时机。心诚则灵，遇事勿忧，保持平和心态，定能遇难成祥，化险为夷。
+        </div>
+      </div>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="action-row">
+      <button class="action-btn btn-again" onclick="goBack('screen-home')">再 求 一 签</button>
+      <button class="action-btn btn-share" onclick="goToShare()">分 享 好 运</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================
+     SCREEN 4: SHARE
+============================= -->
+<div class="screen" id="screen-share">
+  <div class="bg">
+    <div class="stars" id="starsShare"></div>
+  </div>
+  <button class="back-btn" onclick="goBack('screen-reveal')">◂ 返回</button>
+  <div class="inner" style="padding-top:60px">
+    <div class="share-card" id="shareCard">
+      <div class="share-header"></div>
+      <div class="share-body">
+        <div class="share-stick-row">
+          <svg width="40" height="160" viewBox="0 0 40 160" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="sStick" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#A07820"/>
+                <stop offset="30%" stop-color="#F0E0A0"/>
+                <stop offset="60%" stop-color="#DDB84A"/>
+                <stop offset="100%" stop-color="#8B6414"/>
+              </linearGradient>
+            </defs>
+            <rect x="6" y="10" width="28" height="145" rx="14" fill="url(#sStick)"/>
+            <ellipse cx="20" cy="10" rx="14" ry="6" fill="#D4A017"/>
+            <text x="20" y="60" text-anchor="middle" font-family="Ma Shan Zheng" font-size="16" fill="#5A0A0A" id="shareNum">一</text>
+            <line x1="20" y1="70" x2="20" y2="100" stroke="#8B1A1A" stroke-width="0.8" opacity="0.4"/>
+            <text x="20" y="124" text-anchor="middle" font-family="Ma Shan Zheng" font-size="18" fill="#5A0A0A" id="shareChar">吉</text>
+          </svg>
+        </div>
+        <div class="share-poetry" id="sharePoetry">春风和煦百花开<br>万紫千红映日来</div>
+        <div class="share-footer" id="shareDate"></div>
+      </div>
+    </div>
+
+    <div class="share-actions">
+      <button class="action-btn btn-again" onclick="copyFortune()">复 制 签 文</button>
+      <button class="action-btn btn-share" onclick="showToast('长按卡片保存图片')">保 存 图 片</button>
+    </div>
+    <div style="margin-top:16px;font-size:11px;color:rgba(212,160,23,0.3);letter-spacing:2px;text-align:center">
+      · 心诚则灵 · 签文仅供参考 ·
+    </div>
+  </div>
+</div>
+
+<script>
+// ========================================
+// FORTUNE DATA
+// ========================================
+const fortunes = [
+  {
+    num: '一', char: '吉', grade: '上上签',
+    poetry: '春风和煦百花开\n万紫千红映日来\n事事顺遂心愿达\n前程似锦喜事来',
+    cats: [['姻缘','大吉'],['事业','顺遂'],['财运','亨通'],['健康','安泰']],
+    meaning: '此签大吉，所求之事必有所成。春风化雨，万物更生，正是出行、求职、嫁娶的大好时机。心诚则灵，遇事勿忧，保持平和心态，定能遇难成祥，化险为夷。'
+  },
+  {
+    num: '七', char: '运', grade: '上签',
+    poetry: '月明星朗夜初凉\n秋水长天共一色\n守得云开见月明\n柳暗花明又一村',
+    cats: [['姻缘','吉'],['事业','稳健'],['财运','渐进'],['健康','注意']],
+    meaning: '此签主吉，凡事宜稳中求进。时机虽未到最佳，但只要坚守正道，持之以恒，终能守得云开见月明。近期宜静不宜动，待时机成熟自有转机。'
+  },
+  {
+    num: '十三', char: '缘', grade: '中签',
+    poetry: '半是烟雨半晴天\n行到水穷处坐看\n云起时风来又散\n此间得失两悠然',
+    cats: [['姻缘','平'],['事业','平稳'],['财运','平平'],['健康','无恙']],
+    meaning: '此签平稳，所求之事不急不缓，顺其自然为妙。凡事不可强求，随缘处之，保持平常心，时机到来自有收获。宜修身养性，积累实力以待来日。'
+  },
+  {
+    num: '廿一', char: '福', grade: '上上签',
+    poetry: '金榜题名天下知\n衣锦还乡万人羡\n平生所愿皆圆满\n福禄寿喜一并来',
+    cats: [['姻缘','大吉'],['事业','大成'],['财运','大旺'],['健康','康健']],
+    meaning: '此签乃签中之王，大吉大利！所有心愿皆可达成，近日行事无往不利。宜把握时机，大胆前行，必有意外之喜。贵人相助，事半功倍，福星高照。'
+  },
+  {
+    num: '三十', char: '变', grade: '下签',
+    poetry: '乌云蔽日风雨急\n船行险滩须小心\n忍得一时风浪过\n自有平静好光景',
+    cats: [['姻缘','待时'],['事业','审慎'],['财运','守持'],['健康','留意']],
+    meaning: '此签需谨慎，近期宜守不宜攻。遇事三思而后行，切勿冲动决策。逆风时节，守住初心，待过此关，必有转机。凡事多听贵人劝言，可化险为夷。'
+  },
+  {
+    num: '九', char: '吉', grade: '上签',
+    poetry: '瑞雪兆丰年春来\n百鸟齐鸣迎曦光\n勤耕不辍有收获\n好运连连福满堂',
+    cats: [['姻缘','有缘'],['事业','进取'],['财运','有进'],['健康','良好']],
+    meaning: '此签吉祥，预示着辛勤付出终将有所回报。目前虽有小阻，但只要坚持努力，定能收获满满。宜积极主动，把握眼前机会，不要等待观望，行动方能得福。'
+  }
+];
+
+let currentFortune = null;
+let shakeCount = 0;
+let isShaking = false;
+let shakeTimer = null;
+
+// ========================================
+// INIT
+// ========================================
+function init() {
+  createStars('starsHome', 30);
+  createStars('starsShake', 20);
+  createStars('starsReveal', 15);
+  createStars('starsShare', 20);
+  createLanterns();
+  createSmoke();
+  setDateDisplay();
+}
+
+function setDateDisplay() {
+  const now = new Date();
+  const y = now.getFullYear();
+  const m = now.getMonth() + 1;
+  const d = now.getDate();
+  const weekdays = ['日','一','二','三','四','五','六'];
+  document.getElementById('dateDisplay').textContent =
+    `${y}年${m}月${d}日 · 星期${weekdays[now.getDay()]}`;
+}
+
+function createStars(containerId, count) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  for (let i = 0; i < count; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.cssText = `
+      left: ${Math.random()*100}%;
+      top: ${Math.random()*60}%;
+      animation-duration: ${2 + Math.random()*3}s;
+      animation-delay: ${Math.random()*3}s;
+      opacity: ${0.2 + Math.random()*0.5};
+      width: ${1 + Math.random()*2}px;
+      height: ${1 + Math.random()*2}px;
+    `;
+    container.appendChild(star);
+  }
+}
+
+function createLanterns() {
+  const container = document.getElementById('lanternsHome');
+  const lanternSVG = (color) => `
+    <svg width="24" height="42" viewBox="0 0 24 42" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="lg${color}" cx="40%" cy="30%">
+          <stop offset="0%" stop-color="${color}" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="${color}" stop-opacity="0.4"/>
+        </radialGradient>
+      </defs>
+      <rect x="9" y="0" width="6" height="6" rx="2" fill="#D4A017"/>
+      <ellipse cx="12" cy="22" rx="10" ry="15" fill="url(#lg${color})"/>
+      <line x1="8" y1="12" x2="8" y2="32" stroke="rgba(255,200,0,0.3)" stroke-width="0.5"/>
+      <line x1="16" y1="12" x2="16" y2="32" stroke="rgba(255,200,0,0.3)" stroke-width="0.5"/>
+      <rect x="9" y="35" width="6" height="4" rx="1" fill="#D4A017"/>
+      <line x1="12" y1="39" x2="12" y2="42" stroke="#D4A017" stroke-width="1.5"/>
+    </svg>`;
+
+  const colors = ['#C0392B','#8B1A1A','#C0392B'];
+  for (let i = 0; i < 4; i++) {
+    const el = document.createElement('div');
+    el.className = 'lantern';
+    el.innerHTML = lanternSVG(colors[i % colors.length]);
+    el.style.cssText = `
+      left: ${10 + Math.random()*80}%;
+      animation-duration: ${15 + Math.random()*20}s;
+      animation-delay: ${-Math.random()*20}s;
+    `;
+    container.appendChild(el);
+  }
+}
+
+function createSmoke() {
+  const container = document.getElementById('smokeHome');
+  for (let i = 0; i < 6; i++) {
+    const p = document.createElement('div');
+    p.className = 'smoke-particle';
+    p.style.cssText = `
+      left: ${20 + Math.random()*60}%;
+      width: ${40 + Math.random()*40}px;
+      height: ${40 + Math.random()*40}px;
+      animation-duration: ${8 + Math.random()*6}s;
+      animation-delay: ${-Math.random()*8}s;
+    `;
+    container.appendChild(p);
+  }
+}
+
+// ========================================
+// NAVIGATION
+// ========================================
+function transitionTo(screenId, callback) {
+  const overlay = document.getElementById('pageOverlay');
+  overlay.classList.add('active');
+  setTimeout(() => {
+    if (callback) callback();
+    overlay.classList.remove('active');
+  }, 400);
+}
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function goBack(targetId) {
+  transitionTo(targetId, () => showScreen(targetId));
+}
+
+// ========================================
+// SCREEN: SHAKE
+// ========================================
+function goToShake() {
+  shakeCount = 0;
+  document.getElementById('shakeCount').textContent = '';
+  document.getElementById('tapHint').style.display = 'block';
+  document.getElementById('tubeContainer').classList.remove('shaking');
+  document.getElementById('flyingSticks').innerHTML = '';
+  transitionTo('screen-shake', () => showScreen('screen-shake'));
+}
+
+function doShake() {
+  if (shakeCount >= 7) return;
+  shakeCount++;
+
+  const tube = document.getElementById('tubeContainer');
+  const hint = document.getElementById('tapHint');
+  const countEl = document.getElementById('shakeCount');
+
+  // Shake animation
+  tube.classList.add('shaking');
+  if (shakeTimer) clearTimeout(shakeTimer);
+  shakeTimer = setTimeout(() => tube.classList.remove('shaking'), 400);
+
+  // Update count display
+  const numChars = ['一','二','三','四','五','六','七'];
+  countEl.textContent = `第 ${numChars[shakeCount-1]} 摇`;
+
+  // Spawn a flying stick
+  spawnFlyingStick();
+
+  if (shakeCount >= 7) {
+    hint.textContent = '签 已 落 定';
+    hint.style.animation = 'none';
+    hint.style.opacity = '1';
+    setTimeout(() => {
+      revealFortune();
+    }, 800);
+  }
+}
+
+function spawnFlyingStick() {
+  const container = document.getElementById('flyingSticks');
+  const stick = document.createElement('div');
+  stick.className = 'stick-fly';
+
+  const txVal = (Math.random() - 0.5) * 120;
+  const tyVal = -(60 + Math.random() * 60);
+  const rotVal = (Math.random() - 0.5) * 60;
+
+  stick.style.setProperty('--tx', txVal + 'px');
+  stick.style.setProperty('--ty', tyVal + 'px');
+  stick.style.setProperty('--rot', rotVal + 'deg');
+
+  container.appendChild(stick);
+  requestAnimationFrame(() => stick.classList.add('out'));
+  setTimeout(() => stick.remove(), 1100);
+}
+
+// ========================================
+// SCREEN: REVEAL
+// ========================================
+function revealFortune() {
+  // Pick a random fortune
+  currentFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+  const f = currentFortune;
+
+  // Update stick
+  document.getElementById('stickNum').textContent = f.num;
+  document.getElementById('stickChar').textContent = f.char;
+
+  // Update card
+  document.getElementById('fortuneBadge').textContent = f.grade;
+  document.getElementById('fortunePoetry').innerHTML = f.poetry.replace(/\n/g, '<br>');
+  document.getElementById('fortuneMeaning').textContent = f.meaning;
+
+  const catEl = document.getElementById('fortuneCategory');
+  catEl.innerHTML = f.cats.map(([k,v]) =>
+    `<div class="category-item"><div class="dot"></div>${k}：${v}</div>`
+  ).join('');
+
+  // Reset animations
+  const stickWrap = document.getElementById('singleStick');
+  const card = document.getElementById('fortuneCard');
+  const actions = document.querySelector('#screen-reveal .action-row');
+
+  [stickWrap, card, actions].forEach(el => {
+    if (el) {
+      el.style.animation = 'none';
+      el.style.opacity = '0';
+    }
+  });
+
+  transitionTo('screen-reveal', () => {
+    showScreen('screen-reveal');
+    // Re-trigger animations
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        stickWrap.style.animation = 'stickAppear 0.8s cubic-bezier(0.34,1.56,0.64,1) forwards';
+        setTimeout(() => {
+          card.style.animation = 'fadeInUp 0.6s ease forwards';
+          setTimeout(() => {
+            if (actions) actions.style.animation = 'fadeInUp 0.6s ease forwards';
+          }, 300);
+        }, 400);
+      }, 50);
+    });
+  });
+}
+
+// ========================================
+// SCREEN: SHARE
+// ========================================
+function goToShare() {
+  if (!currentFortune) return;
+  const f = currentFortune;
+
+  document.getElementById('shareNum').textContent = f.num;
+  document.getElementById('shareChar').textContent = f.char;
+  document.getElementById('sharePoetry').innerHTML = f.poetry.split('\n').slice(0,2).join('<br>');
+
+  const now = new Date();
+  document.getElementById('shareDate').textContent =
+    `${now.getFullYear()}年${now.getMonth()+1}月${now.getDate()}日 诚心所得`;
+
+  // Reset
+  const card = document.getElementById('shareCard');
+  const acts = document.querySelector('#screen-share .share-actions');
+  card.style.animation = 'none';
+  card.style.opacity = '0';
+  if (acts) { acts.style.animation = 'none'; acts.style.opacity = '0'; }
+
+  transitionTo('screen-share', () => {
+    showScreen('screen-share');
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        card.style.animation = 'fadeInUp 0.6s ease 0.2s forwards';
+        if (acts) acts.style.animation = 'fadeInUp 0.5s ease 0.6s forwards';
+      }, 50);
+    });
+  });
+}
+
+function copyFortune() {
+  if (!currentFortune) return;
+  const f = currentFortune;
+  const text = `【上上签 · ${f.grade}】\n\n${f.poetry}\n\n${f.meaning}\n\n— 虔心求签，诚心得福 ✨`;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(() => showToast('签文已复制'));
+  } else {
+    showToast('签文：' + f.poetry.split('\n')[0]);
+  }
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+// ========================================
+// INIT
+// ========================================
+init();
+</script>
+</body>
+</html>
