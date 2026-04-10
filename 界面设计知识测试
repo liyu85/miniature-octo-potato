@@ -1,0 +1,2496 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>界面设计知识测试（随机+限时版）</title>
+
+<style>
+
+body {
+    font-family: "Segoe UI", Arial;
+    background: linear-gradient(180deg,#0f172a,#1e293b);
+    color: white;
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.chapter {
+    margin-top: 40px;
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.question {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg,#4facfe,#00f2fe);
+}
+
+.timer {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 18px;
+    background: linear-gradient(90deg,#4facfe,#00f2fe);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.result {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>界面设计知识测试（随机+限时版）</h1>
+
+<div class="timer">
+剩余时间：<span id="time">60:00</span>
+</div>
+
+<div class="progress-bar">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+
+<form id="quizForm">
+
+<h2 class='chapter'>第五章：综合知识</h2>
+        <div class='question'>
+            <p><b>第81题：</b>34、iPhone X原型框的制作，由于iPhone X 的宽度和iPhone 8一致，只是高度比iPhone 8多了一个“刘海儿”的宽度，重点是如何把“刘海儿”的区域准确地画出来。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q80" value="0" onclick="updateProgress()">
+                34、iPhone X原型框的制作，由于iPhone X 的宽度和iPhone 8一致，只是高度比iPhone 8多了一个“刘海儿”的宽度，重点是如何把“刘海儿”的区域准确地画出来。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q80" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q80" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q80" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第82题：</b>35、画布就是创作的区域，它是向四周无限延伸的 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q81" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q81" value="1" onclick="updateProgress()">
+                35、画布就是创作的区域，它是向四周无限延伸的
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q81" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q81" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第83题：</b>36、Artboard自带模板包括Apple设备、谷歌的Material Design、Web 网站、Paper ( 纸 张 ) 尺寸和自定义尺寸，基本满足用户的设计要求。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q82" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q82" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q82" value="2" onclick="updateProgress()">
+                36、Artboard自带模板包括Apple设备、谷歌的Material Design、Web 网站、Paper ( 纸 张 ) 尺寸和自定义尺寸，基本满足用户的设计要求。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q82" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第84题：</b>37、Artboard除了限定创作区域外，还可以为移动端产品的每一个页面单独创建一个Artboard通过平铺排列的方式来查看各页面的关联情况。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q83" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q83" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q83" value="2" onclick="updateProgress()">
+                37、Artboard除了限定创作区域外，还可以为移动端产品的每一个页面单独创建一个Artboard通过平铺排列的方式来查看各页面的关联情况。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q83" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第85题：</b>38、选中一个Artboard, 可以看到检查器有两个复选框，分别是“Adjust content on  resize”和“Background color”。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q84" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q84" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q84" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q84" value="3" onclick="updateProgress()">
+                38、选中一个Artboard, 可以看到检查器有两个复选框，分别是“Adjust content on  resize”和“Background color”。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第86题：</b>39、“Background color”复选框，设置Artboard的背景颜色。下方的“Include in Export”复选框的意思是包含导出，导出Artboard时，会使用当前设置的背景颜色。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q85" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q85" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q85" value="2" onclick="updateProgress()">
+                39、“Background color”复选框，设置Artboard的背景颜色。下方的“Include in Export”复选框的意思是包含导出，导出Artboard时，会使用当前设置的背景颜色。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q85" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第87题：</b>40、教材P100页，容易出选择，也有可能出其他题型 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q86" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q86" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q86" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q86" value="3" onclick="updateProgress()">
+                40、教材P100页，容易出选择，也有可能出其他题型
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第88题：</b>栅格布局的定义 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q87" value="0" onclick="updateProgress()">
+                栅格布局的定义
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q87" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q87" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q87" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第89题：</b>栅格(Grid)和布局(Layout)是互有关联的两个概念。栅格在网页设计中又称为网格，作用是把网页按相同大小的格子进行划分；在栅格的基础上，按照列或行的方式将网页按照一定的间隔进一步划分为N等分，就称为布局。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q88" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q88" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q88" value="2" onclick="updateProgress()">
+                栅格(Grid)和布局(Layout)是互有关联的两个概念。栅格在网页设计中又称为网格，作用是把网页按相同大小的格子进行划分；在栅格的基础上，按照列或行的方式将网页按照一定的间隔进一步划分为N等分，就称为布局。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q88" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第90题：</b>42、教材P100页，栅格布局的作用 容易出选择题也有可能出其他题型 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q89" value="0" onclick="updateProgress()">
+                42、教材P100页，栅格布局的作用 容易出选择题也有可能出其他题型
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q89" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q89" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q89" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第91题：</b>好比使用Excel表格规范填写内容一样，栅格布局的作用就是规范展示网页的内容。在网页设计中，左右不对称两栏式布局很常见，假设夜视App的Web后台系统的总宽度是128px, 分为左菜单、右内容的两栏式布局，那么左右栏宽度应该如何设置呢?它们之间的间隔又为多宽呢?如果使用栅格布局，就很容易得出答案，下面将128px进行十六等分，设置列宽为64px 、间隔为16pX。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q90" value="0" onclick="updateProgress()">
+                好比使用Excel表格规范填写内容一样，栅格布局的作用就是规范展示网页的内容。在网页设计中，左右不对称两栏式布局很常见，假设夜视App的Web后台系统的总宽度是128px, 分为左菜单、右内容的两栏式布局，那么左右栏宽度应该如何设置呢?它们之间的间隔又为多宽呢?如果使用栅格布局，就很容易得出答案，下面将128px进行十六等分，设置列宽为64px 、间隔为16pX。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q90" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q90" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q90" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第92题：</b>43、一般情况下，用户会在左右两侧都预留一些安全间距，讲究左右对称美。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q91" value="0" onclick="updateProgress()">
+                43、一般情况下，用户会在左右两侧都预留一些安全间距，讲究左右对称美。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q91" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q91" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q91" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第93题：</b>44、Gutter Width:列和列之间的间隔距离。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q92" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q92" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q92" value="2" onclick="updateProgress()">
+                44、Gutter Width:列和列之间的间隔距离。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q92" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第94题：</b>45、发散思维：1、关键词思考2、换位思考3、需求导向 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q93" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q93" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q93" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q93" value="3" onclick="updateProgress()">
+                45、发散思维：1、关键词思考2、换位思考3、需求导向
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第95题：</b>46、交互设计师都有扮演用户的能力，但是与真实的用户又相去甚远。以用户为中心的设计时代，产品的成功与否取决于用户。在框架设计阶段，设计师就有必要去构建人物角色 (persona),帮助进行产品决策和设计。人物角色不是特指具体的某个人，而是目标用户群体的综合特征，是一个虚拟的用户画像。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q94" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q94" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q94" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q94" value="3" onclick="updateProgress()">
+                46、交互设计师都有扮演用户的能力，但是与真实的用户又相去甚远。以用户为中心的设计时代，产品的成功与否取决于用户。在框架设计阶段，设计师就有必要去构建人物角色 (persona),帮助进行产品决策和设计。人物角色不是特指具体的某个人，而是目标用户群体的综合特征，是一个虚拟的用户画像。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第96题：</b>47、故事板 容易出选择题或名词解释 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q95" value="0" onclick="updateProgress()">
+                47、故事板 容易出选择题或名词解释
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q95" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q95" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q95" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第97题：</b>什么是故事板?故事板最早起源于动画行业，它讲究的是以直观的、可视化的方式，用一个故事将各个镜头串联，形成一个完整体验的过程。在框架设计阶段采用“故事板”,目的是挖掘特定产品使用情境下用户和产品之间的交互关系。故事板不会直接帮助设计师得到更好的方案，但可以帮助设计师更准确地发现潜在问题。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q96" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q96" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q96" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q96" value="3" onclick="updateProgress()">
+                什么是故事板?故事板最早起源于动画行业，它讲究的是以直观的、可视化的方式，用一个故事将各个镜头串联，形成一个完整体验的过程。在框架设计阶段采用“故事板”,目的是挖掘特定产品使用情境下用户和产品之间的交互关系。故事板不会直接帮助设计师得到更好的方案，但可以帮助设计师更准确地发现潜在问题。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第98题：</b>48、构造故事板需要注意以下几个方面。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q97" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q97" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q97" value="2" onclick="updateProgress()">
+                48、构造故事板需要注意以下几个方面。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q97" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第99题：</b>(1)明确故事板中的角色，这在人物角色阶段已经构建好了。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q98" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q98" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q98" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q98" value="3" onclick="updateProgress()">
+                (1)明确故事板中的角色，这在人物角色阶段已经构建好了。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第100题：</b>(2)明确故事中需要达成的目标。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q99" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q99" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q99" value="2" onclick="updateProgress()">
+                (2)明确故事中需要达成的目标。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q99" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div><h2 class='chapter'>第二章：界面设计基础</h2>
+        <div class='question'>
+            <p><b>第21题：</b>1.商业(帮助寻找切入角度和决策)  2.思辨(提高逻辑分析能力和解读视角) 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q20" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q20" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q20" value="2" onclick="updateProgress()">
+                1.商业(帮助寻找切入角度和决策)  2.思辨(提高逻辑分析能力和解读视角)
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q20" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第22题：</b>3.设计(设计思维和设计表达) 4.人性(对人性和社会的理解) 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q21" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q21" value="1" onclick="updateProgress()">
+                3.设计(设计思维和设计表达) 4.人性(对人性和社会的理解)
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q21" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q21" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第23题：</b>5.艺术(提高审美能力) 6.技能(创新工具的使用) 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q22" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q22" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q22" value="2" onclick="updateProgress()">
+                5.艺术(提高审美能力) 6.技能(创新工具的使用)
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q22" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第24题：</b>13、交互设计师常用的工具：1.思维导图  2.流程图 3.线框图4.交互设计/视觉设计/界面设计 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q23" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q23" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q23" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q23" value="3" onclick="updateProgress()">
+                13、交互设计师常用的工具：1.思维导图  2.流程图 3.线框图4.交互设计/视觉设计/界面设计
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第25题：</b>5. 交互说明文档 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q24" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q24" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q24" value="2" onclick="updateProgress()">
+                5. 交互说明文档
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q24" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第26题：</b>14、用户和场景也是设计目标确认时的重要参考因数。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q25" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q25" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q25" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q25" value="3" onclick="updateProgress()">
+                14、用户和场景也是设计目标确认时的重要参考因数。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第27题：</b>15、在Sketch 中 ，可以通过“Line”或“Insert”→“Shape”→“Line”命令 ( 按“L”键) 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q26" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q26" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q26" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q26" value="3" onclick="updateProgress()">
+                15、在Sketch 中 ，可以通过“Line”或“Insert”→“Shape”→“Line”命令 ( 按“L”键)
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第28题：</b>16、通过工具栏的椭圆工具“Oval” 插人，或通过 “Insert”→“Shape”→“Oval”即可插入一个圆形。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q27" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q27" value="1" onclick="updateProgress()">
+                16、通过工具栏的椭圆工具“Oval” 插人，或通过 “Insert”→“Shape”→“Oval”即可插入一个圆形。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q27" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q27" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第29题：</b>17、文字工具的基本设置：(1 ) 文字类型 。(2)对齐和宽度自适应。(3)间距。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q28" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q28" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q28" value="2" onclick="updateProgress()">
+                17、文字工具的基本设置：(1 ) 文字类型 。(2)对齐和宽度自适应。(3)间距。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q28" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第30题：</b>18、剪刀工具可以用来剪除图形的一部分，达到自己想要的形状。值得注意的是，剪刀工具剪断后，路径是开放的， 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q29" value="0" onclick="updateProgress()">
+                18、剪刀工具可以用来剪除图形的一部分，达到自己想要的形状。值得注意的是，剪刀工具剪断后，路径是开放的，
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q29" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q29" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q29" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第31题：</b>19、顾名思义，变形工具就是可以将图像进行变形，以适应不同的形状设计要求使用的方法也比较简单，选中图像，然后单击快捷工具栏的“Transform”变形工具，这时，图像上方会出现变形点， 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q30" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q30" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q30" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q30" value="3" onclick="updateProgress()">
+                19、顾名思义，变形工具就是可以将图像进行变形，以适应不同的形状设计要求使用的方法也比较简单，选中图像，然后单击快捷工具栏的“Transform”变形工具，这时，图像上方会出现变形点，
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第32题：</b>20、Insert (插入):插人类工具的合集，通过该工具可以插入形状、矢量、文字、等工具。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q31" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q31" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q31" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q31" value="3" onclick="updateProgress()">
+                20、Insert (插入):插人类工具的合集，通过该工具可以插入形状、矢量、文字、等工具。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第33题：</b>21、Vector(矢量):插入类工具。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q32" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q32" value="1" onclick="updateProgress()">
+                21、Vector(矢量):插入类工具。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q32" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q32" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第34题：</b>22、Text (文本):插入类工具。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q33" value="0" onclick="updateProgress()">
+                22、Text (文本):插入类工具。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q33" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q33" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q33" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第35题：</b>23、布尔运算一共分为以下4种运算方式。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q34" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q34" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q34" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q34" value="3" onclick="updateProgress()">
+                23、布尔运算一共分为以下4种运算方式。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第36题：</b>(1)Union (联集):执行联集后，将得到两个形状区域的和。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q35" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q35" value="1" onclick="updateProgress()">
+                (1)Union (联集):执行联集后，将得到两个形状区域的和。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q35" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q35" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第37题：</b>(2)Subtract (减去顶层):将上层形状区域与下层形状中的重叠部分，从下层区域中挖去， 同时只保留下层被挖去后的区域。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q36" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q36" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q36" value="2" onclick="updateProgress()">
+                (2)Subtract (减去顶层):将上层形状区域与下层形状中的重叠部分，从下层区域中挖去， 同时只保留下层被挖去后的区域。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q36" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第38题：</b>(3)Intersect (交集):取两个形状重叠的部分。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q37" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q37" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q37" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q37" value="3" onclick="updateProgress()">
+                (3)Intersect (交集):取两个形状重叠的部分。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第39题：</b>(4)Difference (差集):将两个形状相交的部分挖去，保留其他部分。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q38" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q38" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q38" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q38" value="3" onclick="updateProgress()">
+                (4)Difference (差集):将两个形状相交的部分挖去，保留其他部分。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第40题：</b>(5)Combine (结合):布尔运算4种工具的合集。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q39" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q39" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q39" value="2" onclick="updateProgress()">
+                (5)Combine (结合):布尔运算4种工具的合集。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q39" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div><h2 class='chapter'>第三章：交互设计</h2>
+        <div class='question'>
+            <p><b>第41题：</b>24、辅助类工具： 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q40" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q40" value="1" onclick="updateProgress()">
+                24、辅助类工具：
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q40" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q40" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第42题：</b>(1)Show Rulers(展示标尺):单击即可切换显示标尺，标尺位于画布的左侧和顶部。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q41" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q41" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q41" value="2" onclick="updateProgress()">
+                (1)Show Rulers(展示标尺):单击即可切换显示标尺，标尺位于画布的左侧和顶部。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q41" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第43题：</b>(2)Show Grid(展示栅格):单击即可在画板上展示以像素为单位的单元格子。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q42" value="0" onclick="updateProgress()">
+                (2)Show Grid(展示栅格):单击即可在画板上展示以像素为单位的单元格子。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q42" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q42" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q42" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第44题：</b>(3)Show  Layout (展示布局):单击即可在画板上展示已经默认设置的布局，以栅格规范为单位。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q43" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q43" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q43" value="2" onclick="updateProgress()">
+                (3)Show  Layout (展示布局):单击即可在画板上展示已经默认设置的布局，以栅格规范为单位。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q43" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第45题：</b>(4)Show Pixels(展示像素):切换像素点展示。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q44" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q44" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q44" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q44" value="3" onclick="updateProgress()">
+                (4)Show Pixels(展示像素):切换像素点展示。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第46题：</b>(5)Export (导出):导出图层或画板内容。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q45" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q45" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q45" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q45" value="3" onclick="updateProgress()">
+                (5)Export (导出):导出图层或画板内容。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第47题：</b>(6)Round to Pixel(对齐像素):部分图层可能不符合像素规范，单击即可修正像素的对齐方式。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q46" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q46" value="1" onclick="updateProgress()">
+                (6)Round to Pixel(对齐像素):部分图层可能不符合像素规范，单击即可修正像素的对齐方式。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q46" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q46" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第48题：</b>(7)Create Symbol(创建组件):创建Symbol 的工具。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q47" value="0" onclick="updateProgress()">
+                (7)Create Symbol(创建组件):创建Symbol 的工具。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q47" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q47" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q47" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第49题：</b>(8)Zoom (放大镜):单击可放大缩小画布的比例。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q48" value="0" onclick="updateProgress()">
+                (8)Zoom (放大镜):单击可放大缩小画布的比例。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q48" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q48" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q48" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第50题：</b>(9)Make Grid(创建栅格):以栅格的排列方式，批量复制内容，可以批量复制画板或图层。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q49" value="0" onclick="updateProgress()">
+                (9)Make Grid(创建栅格):以栅格的排列方式，批量复制内容，可以批量复制画板或图层。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q49" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q49" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q49" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第51题：</b>(1)Mirror (镜像):创建一个他人可查看的镜像，方便演示Sketch创作的内容，在第4章Sketch Mirror中将详细讲解该工具的使用。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q50" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q50" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q50" value="2" onclick="updateProgress()">
+                (1)Mirror (镜像):创建一个他人可查看的镜像，方便演示Sketch创作的内容，在第4章Sketch Mirror中将详细讲解该工具的使用。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q50" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第52题：</b>(11)Cloud (云端):上传文件到云端。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q51" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q51" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q51" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q51" value="3" onclick="updateProgress()">
+                (11)Cloud (云端):上传文件到云端。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第53题：</b>(12)Colors (色板):调色板。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q52" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q52" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q52" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q52" value="3" onclick="updateProgress()">
+                (12)Colors (色板):调色板。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第54题：</b>(13)Fonts (字体):字体样式表。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q53" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q53" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q53" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q53" value="3" onclick="updateProgress()">
+                (13)Fonts (字体):字体样式表。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第55题：</b>(14)Space(间距):用来设置工具栏工具之间的间距，方便从距离上区分工具的类别。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q54" value="0" onclick="updateProgress()">
+                (14)Space(间距):用来设置工具栏工具之间的间距，方便从距离上区分工具的类别。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q54" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q54" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q54" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第56题：</b>(15)Flexible Space(浮动间距):与Space的功能一致，但浮动间距不是固定的距离大小 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q55" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q55" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q55" value="2" onclick="updateProgress()">
+                (15)Flexible Space(浮动间距):与Space的功能一致，但浮动间距不是固定的距离大小
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q55" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第57题：</b>25、学会版本管理 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q56" value="0" onclick="updateProgress()">
+                25、学会版本管理
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q56" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q56" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q56" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第58题：</b>1.使用多个Sketch文件管理 2.使用Sketch自动保存历史版本 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q57" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q57" value="1" onclick="updateProgress()">
+                1.使用多个Sketch文件管理 2.使用Sketch自动保存历史版本
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q57" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q57" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第59题：</b>26、在弹出的菜单中选择 “Copy”命 令 ( 或 按 “Command+C”组合键),即可实现图标的复制； 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q58" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q58" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q58" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q58" value="3" onclick="updateProgress()">
+                26、在弹出的菜单中选择 “Copy”命 令 ( 或 按 “Command+C”组合键),即可实现图标的复制；
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第60题：</b>27、iPhone X的宽度与iPhone 8一致，高度增加了145 Points, 一共812 Points。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q59" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q59" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q59" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q59" value="3" onclick="updateProgress()">
+                27、iPhone X的宽度与iPhone 8一致，高度增加了145 Points, 一共812 Points。
+            </label><br>
+            </div><h2 class='chapter'>第一章：Sketch基础</h2>
+        <div class='question'>
+            <p><b>第1题：</b>本复习材料仅按考纲对教材进行梳理，如有错误，以教材为准。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q0" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q0" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q0" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q0" value="3" onclick="updateProgress()">
+                本复习材料仅按考纲对教材进行梳理，如有错误，以教材为准。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第2题：</b>本材料仅限本人使用。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q1" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q1" value="1" onclick="updateProgress()">
+                本材料仅限本人使用。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q1" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q1" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第3题：</b>选择题 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q2" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q2" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q2" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q2" value="3" onclick="updateProgress()">
+                选择题
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第4题：</b>Sketch的优势： 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q3" value="0" onclick="updateProgress()">
+                Sketch的优势：
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q3" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q3" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q3" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第5题：</b>界面简单易上手 2.高、低保真原型一键切换3.支持简单图像处理 4.自带组件库 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q4" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q4" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q4" value="2" onclick="updateProgress()">
+                界面简单易上手 2.高、低保真原型一键切换3.支持简单图像处理 4.自带组件库
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q4" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第6题：</b>2、谷歌全栈设计师Siddhartha打造了一款Sketch插件——Sketch Material。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q5" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q5" value="1" onclick="updateProgress()">
+                2、谷歌全栈设计师Siddhartha打造了一款Sketch插件——Sketch Material。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q5" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q5" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第7题：</b>3、Sketch软件目前只能通过Sketch官网下载安装，且仅限于Mac OS系统使用 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q6" value="0" onclick="updateProgress()">
+                3、Sketch软件目前只能通过Sketch官网下载安装，且仅限于Mac OS系统使用
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q6" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q6" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q6" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第8题：</b>4、Sketch的价格包括3个部分，即基础价格+授权设备价格+软件更新价格。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q7" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q7" value="1" onclick="updateProgress()">
+                4、Sketch的价格包括3个部分，即基础价格+授权设备价格+软件更新价格。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q7" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q7" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第9题：</b>5、基础价格：即首次购买的费用，价格为99美元，允许在一台设备上使用，包含一年的免费版本更新。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q8" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q8" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q8" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q8" value="3" onclick="updateProgress()">
+                5、基础价格：即首次购买的费用，价格为99美元，允许在一台设备上使用，包含一年的免费版本更新。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第10题：</b>6、Sketch可以创建多个页面，页面之间互不干扰，且可以同时引用Symbol。添加页面的方式也比较简单，单击“Pages”右侧的“+”按钮即可完成创建。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q9" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q9" value="1" onclick="updateProgress()">
+                6、Sketch可以创建多个页面，页面之间互不干扰，且可以同时引用Symbol。添加页面的方式也比较简单，单击“Pages”右侧的“+”按钮即可完成创建。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q9" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q9" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第11题：</b>7、图层：可以单击“眼睛”图标对图层进行显示、隐藏操作；同样地，双击图层名称，即可对图层进行重命名。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q10" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q10" value="1" onclick="updateProgress()">
+                7、图层：可以单击“眼睛”图标对图层进行显示、隐藏操作；同样地，双击图层名称，即可对图层进行重命名。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q10" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q10" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第12题：</b>9、采 用MCN(Multi-Channel Network,舶来品)模式，将PGC内容联合起来，在资本的有力支持下，保障内容的持续输出，最终实现商业的稳定变现。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q11" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q11" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q11" value="2" onclick="updateProgress()">
+                9、采 用MCN(Multi-Channel Network,舶来品)模式，将PGC内容联合起来，在资本的有力支持下，保障内容的持续输出，最终实现商业的稳定变现。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q11" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第13题：</b>10、交互设计定义：这里比较倾向于优设网的回答：“你来我往”谓之“交互”。这里的“你来”指的是“输入” (input) 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q12" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q12" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q12" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q12" value="3" onclick="updateProgress()">
+                10、交互设计定义：这里比较倾向于优设网的回答：“你来我往”谓之“交互”。这里的“你来”指的是“输入” (input)
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第14题：</b>11、交互设计师的职责要求基本上大同小异，具体有以下几方面。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q13" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q13" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q13" value="2" onclick="updateProgress()">
+                11、交互设计师的职责要求基本上大同小异，具体有以下几方面。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q13" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第15题：</b>(1)参与产品的整体设计规划，输出交互设计产出物，推动产品的落地实现。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q14" value="0" onclick="updateProgress()">
+                (1)参与产品的整体设计规划，输出交互设计产出物，推动产品的落地实现。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q14" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q14" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q14" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第16题：</b>(2)对产品进行持续性的设计优化，输出相关设计规范，提升用户体验。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q15" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q15" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q15" value="2" onclick="updateProgress()">
+                (2)对产品进行持续性的设计优化，输出相关设计规范，提升用户体验。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q15" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第17题：</b>(3)协调和推动“以用户为中心”的设计理念，在公司范围普及用户体验概念和流程。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q16" value="0" onclick="updateProgress()">
+                (3)协调和推动“以用户为中心”的设计理念，在公司范围普及用户体验概念和流程。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q16" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q16" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q16" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第18题：</b>(4)负责设计前瞻性的研究工作。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q17" value="0" onclick="updateProgress()">
+                (4)负责设计前瞻性的研究工作。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q17" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q17" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q17" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第19题：</b>12、交互设计师需要的知识体系 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q18" value="0" onclick="updateProgress()">
+                12、交互设计师需要的知识体系
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q18" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q18" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q18" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第20题：</b>交互设计师需要懂得以下6个方面的知识体系。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q19" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q19" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q19" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q19" value="3" onclick="updateProgress()">
+                交互设计师需要懂得以下6个方面的知识体系。
+            </label><br>
+            </div><h2 class='chapter'>第四章：组件与图层</h2>
+        <div class='question'>
+            <p><b>第61题：</b>28、说到交互设计方法论，不得不提的一种“万金油”的交互设计方法论—5W2H分析法，又称七何分析法，是“二战”中美国陆军兵器修理部首创。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q60" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q60" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q60" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q60" value="3" onclick="updateProgress()">
+                28、说到交互设计方法论，不得不提的一种“万金油”的交互设计方法论—5W2H分析法，又称七何分析法，是“二战”中美国陆军兵器修理部首创。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第62题：</b>29、5W2H方法论也可以应用到场景化设计当中去 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q61" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q61" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q61" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q61" value="3" onclick="updateProgress()">
+                29、5W2H方法论也可以应用到场景化设计当中去
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第63题：</b>方法论第二步 挖掘机会 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q62" value="0" onclick="updateProgress()">
+                方法论第二步 挖掘机会
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q62" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q62" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q62" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第64题：</b>How to do: 如何解决场景出现的问题? 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q63" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q63" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q63" value="2" onclick="updateProgress()">
+                How to do: 如何解决场景出现的问题?
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q63" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第65题：</b>How much:解决问题的成本如何?机会何在? 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q64" value="0" onclick="updateProgress()">
+                How much:解决问题的成本如何?机会何在?
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q64" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q64" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q64" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第66题：</b>案例小明，针对上述场景问题解决的方案可以有以下几种。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q65" value="0" onclick="updateProgress()">
+                案例小明，针对上述场景问题解决的方案可以有以下几种。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q65" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q65" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q65" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第67题：</b>(1)继续拦截出租车(How to do),但是有下班高峰打不到车的风险，而浪费了时间成本 (How much)。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q66" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q66" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q66" value="2" onclick="updateProgress()">
+                (1)继续拦截出租车(How to do),但是有下班高峰打不到车的风险，而浪费了时间成本 (How much)。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q66" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第68题：</b>( 2 ) 使用App叫车(How to do),由于多人同时叫车，需要额外的打车成本(How much) 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q67" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q67" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q67" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q67" value="3" onclick="updateProgress()">
+                ( 2 ) 使用App叫车(How to do),由于多人同时叫车，需要额外的打车成本(How much)
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第69题：</b>(3)找自行车骑回家(How to do),需要下载一个App 而耗费流量 (How much)。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q68" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q68" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q68" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q68" value="3" onclick="updateProgress()">
+                (3)找自行车骑回家(How to do),需要下载一个App 而耗费流量 (How much)。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第70题：</b>(4)更多方案 … … 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q69" value="0" onclick="updateProgress()">
+                (4)更多方案 … …
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q69" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q69" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q69" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第71题：</b>30、Design Sprint核心分为6个阶段，每一个阶段都环环相扣，完成其中一个阶段则进入下一个阶段： 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q70" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q70" value="1" onclick="updateProgress()">
+                30、Design Sprint核心分为6个阶段，每一个阶段都环环相扣，完成其中一个阶段则进入下一个阶段：
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q70" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q70" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第72题：</b>(1)Understand(理解):理解项目背景、用户需求、业务需求、现存问题等。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q71" value="0" onclick="updateProgress()">
+                (1)Understand(理解):理解项目背景、用户需求、业务需求、现存问题等。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q71" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q71" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q71" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第73题：</b>(2)Define(定义):定义好要达到的目标，可以是产品目标或设计目标。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q72" value="0" onclick="updateProgress()">
+                (2)Define(定义):定义好要达到的目标，可以是产品目标或设计目标。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q72" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q72" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q72" value="3" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第74题：</b>(3)Diverge (发散):发散思维，集思广益，尽可能想出多样化的解决方案。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q73" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q73" value="1" onclick="updateProgress()">
+                (3)Diverge (发散):发散思维，集思广益，尽可能想出多样化的解决方案。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q73" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q73" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第75题：</b>(4)Decide (决策):共同协商决定其中一种最好的方案。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q74" value="0" onclick="updateProgress()">
+                (4)Decide (决策):共同协商决定其中一种最好的方案。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q74" value="1" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q74" value="2" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q74" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第76题：</b>(5)Prototype (原型):把方案通过原型具体表现出来，或已经开发出演示DEMO。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q75" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q75" value="1" onclick="updateProgress()">
+                (5)Prototype (原型):把方案通过原型具体表现出来，或已经开发出演示DEMO。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q75" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q75" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第77题：</b>(6)Validate(验证):找利益相关者或相关用户进行验证。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q76" value="0" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q76" value="1" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q76" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q76" value="3" onclick="updateProgress()">
+                (6)Validate(验证):找利益相关者或相关用户进行验证。
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第78题：</b>31、Design Sprint具体实施一共要经历6天。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q77" value="0" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q77" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q77" value="2" onclick="updateProgress()">
+                31、Design Sprint具体实施一共要经历6天。
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q77" value="3" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第79题：</b>32、在Sketch发布的47版本中，有一条重要的更新：现在Sketch的矩形支持Smooth  Corners (平滑角)的方式进行调整，使之更好地达到iOS的适配效果 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q78" value="0" onclick="updateProgress()">
+                32、在Sketch发布的47版本中，有一条重要的更新：现在Sketch的矩形支持Smooth  Corners (平滑角)的方式进行调整，使之更好地达到iOS的适配效果
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q78" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q78" value="2" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q78" value="3" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            </div>
+        <div class='question'>
+            <p><b>第80题：</b>33、iPhone X原型框的制作，由于iPhone X 的宽度和iPhone 8一致，只是高度比iPhone 8多了一个“刘海儿”的宽度，重点是如何把“刘海儿”的区域准确地画出来。 的正确描述是：</p>
+        
+            <label>
+                <input type="radio" name="q79" value="0" onclick="updateProgress()">
+                用于界面布局
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q79" value="1" onclick="updateProgress()">
+                以上都是
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q79" value="2" onclick="updateProgress()">
+                与 UI 设计相关的概念
+            </label><br>
+            
+            <label>
+                <input type="radio" name="q79" value="3" onclick="updateProgress()">
+                33、iPhone X原型框的制作，由于iPhone X 的宽度和iPhone 8一致，只是高度比iPhone 8多了一个“刘海儿”的宽度，重点是如何把“刘海儿”的区域准确地画出来。
+            </label><br>
+            </div>
+
+<button type="button" onclick="submitQuiz()">提交试卷</button>
+
+</form>
+
+<div id="result" class="result"></div>
+
+</div>
+
+<script>
+
+const answers = [1, 2, 1, 1, 1, 3, 1, 3, 1, 3, 2, 1, 0, 0, 2, 0, 3, 2, 1, 2, 3, 3, 3, 1, 0, 0, 1, 2, 1, 2, 1, 1, 0, 2, 0, 0, 3, 2, 2, 1, 3, 0, 3, 3, 0, 2, 3, 3, 3, 2, 1, 0, 1, 0, 2, 1, 1, 2, 2, 2, 0, 0, 2, 0, 3, 1, 3, 1, 1, 2, 0, 2, 3, 0, 2, 0, 0, 1, 1, 1, 2, 3, 1, 0, 1, 3, 1, 2, 0, 2, 2, 2, 3, 2, 1, 2, 0, 1, 1, 0];
+
+// Timer (60 minutes)
+let totalSeconds = 60 * 60;
+
+function updateTimer() {
+
+    let minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+
+    document.getElementById("time").innerText =
+        minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+    if (totalSeconds <= 0) {
+        submitQuiz();
+    }
+
+    totalSeconds--;
+}
+
+setInterval(updateTimer,1000);
+
+// Progress
+
+function updateProgress() {
+
+    let total = answers.length;
+    let answered = 0;
+
+    for (let i=0;i<total;i++) {
+        let radios = document.getElementsByName("q"+i);
+        for (let r of radios) {
+            if (r.checked) {
+                answered++;
+                break;
+            }
+        }
+    }
+
+    let percent = (answered/total)*100;
+    document.getElementById("progressFill").style.width = percent + "%";
+}
+
+// Submit
+
+function submitQuiz() {
+
+    let score = 0;
+    let wrongList = "";
+
+    for (let i=0;i<answers.length;i++) {
+
+        let radios = document.getElementsByName("q"+i);
+        let selected = -1;
+
+        for (let r of radios) {
+            if (r.checked) {
+                selected = parseInt(r.value);
+            }
+        }
+
+        if (selected === answers[i]) {
+            score++;
+        } else {
+            wrongList += "<p>第"+(i+1)+"题 正确答案："+
+                         String.fromCharCode(65+answers[i])+"</p>";
+        }
+    }
+
+    document.getElementById("result").innerHTML =
+        "<h2>你的得分："+score+" / "+answers.length+"</h2>" +
+        "<h3>错题：</h3>" +
+        wrongList;
+
+    window.scrollTo(0,document.body.scrollHeight);
+}
+
+</script>
+
+</body>
+
+</html>
